@@ -1,27 +1,25 @@
-let http = require('http')
-let request = require('request')
-let fs = require('fs')
-let through = require('through')
-//let destinationUrl = 'http://127.0.0.1:8000'
-
-
+let http = require('http');
+let request = require('request');
+let fs = require('fs');
+let through = require('through');
 let argv = require('yargs')
            .default('host','127.0.0.1')
            .argv
 
-let scheme = 'http://'
-let port =argv.port || argv.host === '127.0.0.1'? 8000:80
-let destinationUrl = argv.url || scheme + argv.host + ':' + port
-let logStream = argv.mylog ? fs.createWriteStream(argv.mylog): process.stdout
-console.log('argv2',argv.mylog)
+let scheme = 'http://';
+let port =argv.port || argv.host === '127.0.0.1'? 8000:80;
+let destinationUrl = argv.url || scheme + argv.host + ':' + port;
+let logStream = argv.mylog ? fs.createWriteStream(argv.mylog): process.stdout;
 
 
 http.createServer((req, res) => {
+
     logStream.write("\n Echo Request:" +JSON.stringify(req.headers))
+
     for(let header in req.headers){
     	res.setHeader(header,req.headers[header])
     }
-    req.pipe(process.stdout)
+    
     through(req,logStream,{autoDestroy:false})
     req.pipe(res);
 }).listen(8000)
