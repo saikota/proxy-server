@@ -4,12 +4,14 @@
   "description": "proxy server using iojs and babel",
   "main": "index.js",
   "scripts": {
-    //"start": "node index.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "proxy-server"
   ],
   "author": "Sai Kota",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.55.0"
+  }
 }
