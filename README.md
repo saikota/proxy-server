@@ -5,7 +5,7 @@ A Proxy Server using IO.js
 - Successfully proxy requests made to the proxy server?(Yes)
 - Include a CLI? (Yes)
 - Does app log request to stdout or save it properly to a file when the log argument is given? (Logs to a file)
-- ##### Time Taken to complete : 2.5 Hours.
+- Time Taken to complete : 2.5 Hours.
 
 ## Steps to Reproduce the below shown gif
 - ### Starts the proxy server:
