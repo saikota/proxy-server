@@ -11,7 +11,7 @@ let scheme = 'http://';
 let port =argv.port || argv.host === '127.0.0.1'? 8000:80;
 let destinationUrl = argv.url || scheme + argv.host + ':' + port;
 let logStream = argv.mylog ? fs.createWriteStream(argv.mylog): process.stdout;
-console.log(argv);
+
 
 http.createServer((req, res) => {
 
@@ -23,14 +23,15 @@ http.createServer((req, res) => {
     
     through(req,logStream,{autoDestroy:false})
     req.pipe(res);
-}).listen(port)
+}).listen(8000)
 
-logStream.write(colors.white(" we are listening on http://127.0.0.1:8000 "));
+//logStream.write(colors.white(" we are listening on ",destinationUrl));
 
 http.createServer((req, res) => {
 	let url = destinationUrl
 	if(req.headers['x-destination-url']){
 		url = req.headers['x-destination-url']
+  
 	}
    let options ={
    	headers:req.headers,
