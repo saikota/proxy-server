@@ -7,7 +7,7 @@ A Proxy Server using IO.js
 - Does app log request to stdout or save it properly to a file when the log argument is given? (Logs to a file)
 
 ## Steps to produce the below shown gif
-- ### starts the proxy server:
+- ### Starts the proxy server:
 npm start
 
 - #### Fetches from the default echo server and prints to console
