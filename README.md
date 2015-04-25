@@ -6,7 +6,7 @@ A Proxy Server using IO.js
 - Include a CLI? (Yes)
 - Does app log request to stdout or save it properly to a file when the log argument is given? (Logs to a file)
 
-## Steps to produce the below shown gif
+## Steps to Reproduce the below shown gif
 - ### Starts the proxy server:
 npm start
 
