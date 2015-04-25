@@ -23,7 +23,7 @@ http.createServer((req, res) => {
     
     through(req,logStream,{autoDestroy:false})
     req.pipe(res);
-}).listen(8000)
+}).listen(port)
 
 logStream.write(colors.white(" we are listening on http://127.0.0.1:8000 "));
 
