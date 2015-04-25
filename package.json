@@ -4,6 +4,7 @@
   "description": "proxy server using iojs and babel",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon --exec babel-node -- index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,6 +13,7 @@
   "author": "Sai Kota",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.0.3",
     "request": "^2.55.0",
     "through": "^2.3.7",
     "yargs": "^3.7.2"
